@@ -71,9 +71,9 @@ public class MessageActivity extends AppCompatActivity {
         //
         //an action to take in the future with same permission
         //as your application
-        sentPI = PendingIntent.getBroadcast(this, 0, new Intent(SENT), 0);
+        sentPI = PendingIntent.getBroadcast(this, 0, new Intent(SENT), PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         deliveredPI = PendingIntent.getBroadcast(this, 0, new
-                Intent(DELIVERED), 0);
+                Intent(DELIVERED), PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         //intent to filter the action for SMS messages received
         intentFilter = new IntentFilter();
         intentFilter.addAction("SMS_RECEIVED_ACTION");
